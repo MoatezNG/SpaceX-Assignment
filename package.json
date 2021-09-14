@@ -1,0 +1,39 @@
+{
+  "name": "spacex-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.tsx",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  },
+  "keywords": [],
+  "author": "Moatez",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "css-modules-typescript-loader": "^4.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "path": "^0.12.7",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^8.0.17",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass-loader": "^12.1.0",
+    "typescript": "^4.2.2"
+  }
+}
