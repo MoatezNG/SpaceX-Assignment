@@ -1,41 +1,41 @@
-import { IHistory } from "../../models/IHistory";
+import { ILaunch } from "../../models/ILaunch";
 import { IReduxAction } from "types/IReduxAction";
-import { historyTypes } from "../types/historyTypes";
+import { launcheTypes } from "../types/launcheTypes";
 
-export interface HistoryState {
+export interface LaunchState {
   pending: boolean;
-  historyList: IHistory[];
+  launches: ILaunch[];
   error: string | null;
 }
 
-const initialState: HistoryState = {
+const initialState: LaunchState = {
   pending: false,
-  historyList: [],
+  launches: [],
   error: null,
 };
 
 export default (
   state = initialState,
-  action: IReduxAction<keyof historyTypes, HistoryState>
+  action: IReduxAction<keyof launcheTypes, LaunchState>
 ) => {
   switch (action.type) {
-    case historyTypes.FETCH_HISTORY_REQUEST:
+    case launcheTypes.FETCH_LAUNCHES_REQUEST:
       return {
         ...state,
         pending: true,
       };
-    case historyTypes.FETCH_HISTORY_SUCCESS:
+    case launcheTypes.FETCH_LAUNCHES_SUCCESS:
       return {
         ...state,
         pending: false,
-        historyList: action.payload?.historyList,
+        launches: action.payload?.launches,
         error: null,
       };
-    case historyTypes.FETCH_HISTORY_FAILURE:
+    case launcheTypes.FETCH_LAUNCHES_FAILURE:
       return {
         ...state,
         pending: false,
-        historyList: [],
+        launches: [],
         error: action.payload?.error,
       };
     default:
