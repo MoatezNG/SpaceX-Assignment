@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHistoryRequest } from "../_redux/actions/historyActions";
-import { RootState } from "../_redux/reducers/rootReducer";
+import { fetchHistoryRequest } from "../../_redux/actions/historyActions";
+import { RootState } from "../../_redux/reducers/rootReducer";
 
 const HistoryList: React.FC = () => {
   const dispatch = useDispatch();
