@@ -1,7 +1,9 @@
+import DataTable from "../../components/DataTable";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHistoryRequest } from "../../_redux/actions/historyActions";
 import { RootState } from "../../_redux/reducers/rootReducer";
+import historyColumns from "./historyColumns";
 
 const HistoryList: React.FC = () => {
   const dispatch = useDispatch();
@@ -20,11 +22,11 @@ const HistoryList: React.FC = () => {
       ) : error ? (
         <div>Error</div>
       ) : (
-        historyList?.map((history, index) => (
-          <div key={history.id}>
-            {++index}. {history.title}
-          </div>
-        ))
+        <DataTable
+        keyExtractor={({ id }) => id.toString()}
+        columns={historyColumns}
+        data={historyList}
+      />
       )}
     </div>
   );
